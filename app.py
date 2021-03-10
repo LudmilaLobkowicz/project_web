@@ -10,7 +10,7 @@ import requests
 # ## This is a sub header
 # This is text""")
 st.title("Chest X-Ray Disease Detector")
-st.header("Detecting: Bacterial Pneumonia, Viral Pneumonia, COVID-19")
+#st.write("*Detecting: Bacterial Pneumonia, Viral Pneumonia, COVID-19*")
 st.header("Upload the patient's chest X-Ray below")
 
 # st.set_option('deprecation.showfileUploaderEncoding', False)
