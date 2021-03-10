@@ -10,6 +10,8 @@ import requests
 # ## This is a sub header
 # This is text""")
 
+st.set_page_config(page_title=None, page_icon='🫁', layout='centered')
+
 st.title("🫁 Chest X-Ray Detector 🫁")
 #st.write("*Detecting: Bacterial Pneumonia, Viral Pneumonia, COVID-19*")
 st.header("*Upload the patient's chest X-Ray below*")
@@ -20,9 +22,9 @@ uploaded_file = st.file_uploader("Choose a jpeg, jpg, png file")
 
 image = uploaded_file
 if image is not None:
-    # image = Image.open(uploaded_file)
+    #image = Image.open(uploaded_file)
     # plt.imshow(image) # st.write(data)
-    st.image(image, caption='Uploaded X-Ray.', use_column_width=True, width=3)
+    st.image(image, caption='Uploaded X-Ray.', use_column_width=True, width=1)
     st.write("")
     # predict(image)
     # label = predict(image)
@@ -33,11 +35,14 @@ if image is not None:
 #
 # url = 'http://taxifare.lewagon.ai/predict_fare/'
 
+col1,col2 = st.beta_columns(2)
 
-
+#col1,col2 = st.beta_columns(2)
+#predict_button = col1.button('Predict on uploaded files')
+#test_data = col2.button('Predict on sample data')
 
 st.header("*Determine whether your patient has a disease or not.*")
-st.markdown("Push the Predict button below: 👇")
+st.subheader("Push the Predict button below: 👇")
 
 if st.button('Predict Chest X_Ray 🌌'):
     #url = 'http://127.0.0.1:8000/predict_diseased'
@@ -65,7 +70,7 @@ if st.button('Predict Chest X_Ray 🌌'):
 
 
 st.header("*Classify which disease your patient has.*")
-st.markdown("Push the Classify button below:👇")
+st.subheader("Push the Classify button below:👇")
 
 if st.button('Classify disease in Chest X_Ray 🌌'):
     #url_2 = 'http://127.0.0.1:8000/predict_CXray'
