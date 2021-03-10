@@ -9,13 +9,14 @@ import requests
 # st.markdown("""# This is a header
 # ## This is a sub header
 # This is text""")
-st.title("Chest X-Ray Disease Detector")
+
+st.title("🫁 Chest X-Ray Detector 🫁")
 #st.write("*Detecting: Bacterial Pneumonia, Viral Pneumonia, COVID-19*")
-st.header("Upload the patient's chest X-Ray below")
+st.header("*Upload the patient's chest X-Ray below*")
 
 # st.set_option('deprecation.showfileUploaderEncoding', False)
 
-uploaded_file = st.file_uploader("Choose a jpeg file", type="jpeg")
+uploaded_file = st.file_uploader("Choose a jpeg, jpg, png file")
 
 image = uploaded_file
 if image is not None:
@@ -33,10 +34,12 @@ if image is not None:
 # url = 'http://taxifare.lewagon.ai/predict_fare/'
 
 
-st.header("Determine whether your patient has a disease or not.")
-st.header("Push the Predict button below:")
 
-if st.button('Predict X_Ray'):
+
+st.header("*Determine whether your patient has a disease or not.*")
+st.markdown("Push the Predict button below: 👇")
+
+if st.button('Predict Chest X_Ray 🌌'):
     #url = 'http://127.0.0.1:8000/predict_diseased'
     url = 'http://localhost:8000/predict_diseased'
     st.write("Predicting...")
@@ -55,15 +58,16 @@ if st.button('Predict X_Ray'):
     #st.write(prediction)
 
     # if prediction == 'Normal':
-    #     st.success("The results of your Chest X-Ray was normal")
+    #     st.success("The results of your Chest X-Ray was normal 🥳")
     # elif prediction == 'Diseased':
-    #     st.warning("The results of your Chest X-Ray should disease")
+    #     st.warning("The results of your Chest X-Ray should disease ☹️")
 
 
-st.header("Classify which disease your patient has.")
-st.header("Push the Classify button below:")
 
-if st.button('Classify Disease'):
+st.header("*Classify which disease your patient has.*")
+st.markdown("Push the Classify button below:👇")
+
+if st.button('Classify disease in Chest X_Ray 🌌'):
     #url_2 = 'http://127.0.0.1:8000/predict_CXray'
     url_2 = 'http://localhost:8000/predict_CXray'
     st.write("Classifying...")
@@ -83,13 +87,13 @@ if st.button('Classify Disease'):
     st.write(prediction)
 
     if prediction == 'Normal':
-        st.success("The results of your Chest X-Ray was normal")
+        st.success("The results of your Chest X-Ray was normal 🥳")
     elif prediction == 'Bacterial Pneumonia':
         st.warning("The results of your Chest X-Ray was a bacterial_pneumonia")
     elif prediction == 'Viral Pneumonia':
-        st.warning("The results of your Chest X-Ray was a viral_pneumonia")
+        st.warning("The results of your Chest X-Ray was a viral_pneumonia 🦠")
     elif prediction == 'Covid-19':
-        st.warning("The results of your Chest X-Ray was a Covid-19 infection")
+        st.warning("The results of your Chest X-Ray was a Covid-19 infection 🦠")
     elif prediction == 0:
-        st.success("prediction did not work")
+        st.warning("prediction did not work")
 
