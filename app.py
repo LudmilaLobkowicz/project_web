@@ -1,16 +1,33 @@
 
+
+
 import streamlit as st
 import numpy as np
 import pandas as pd
 from PIL import Image
 import requests
+
+CSS = """
+h1 {
+    color: green;
+}
+body {
+    background-size: cover;
+    background-color: RGBA(36,160,203,0.32);
+}
+"""
+
+st.write(f'<style>{CSS}</style>', unsafe_allow_html=True)
+
+
+
 # from project_web.api.fast_web import predict
 
 # st.markdown("""# This is a header
 # ## This is a sub header
 # This is text""")
-
-st.set_page_config(page_title=None, page_icon='🫁', layout='centered')
+image = Image.open('lungs.jpeg')
+st.image(image, use_column_width=1)
 
 st.title("🫁 Chest X-Ray Detector 🫁")
 #st.write("*Detecting: Bacterial Pneumonia, Viral Pneumonia, COVID-19*")
@@ -41,10 +58,9 @@ col1,col2 = st.beta_columns(2)
 #predict_button = col1.button('Predict on uploaded files')
 #test_data = col2.button('Predict on sample data')
 
-st.header("*Determine whether your patient has a disease or not.*")
-st.subheader("Push the Predict button below: 👇")
+st.header("*Normal or Diseased?*")
 
-if st.button('Predict Chest X_Ray 🌌'):
+if st.button('👇 Push to predict 🌌'):
     #url = 'http://127.0.0.1:8000/predict_diseased'
     url = 'https://define-some-container-image-name-p6ejzc3aka-ew.a.run.app/predict_diseased'
     st.write("Predicting...")
@@ -69,10 +85,10 @@ if st.button('Predict Chest X_Ray 🌌'):
 
 
 
-st.header("*Classify which disease your patient has.*")
-st.subheader("Push the Classify button below:👇")
+st.header("*Classify Disease*")
 
-if st.button('Classify disease in Chest X_Ray 🌌'):
+
+if st.button('👇 Push to classify 🌌'):
     #url_2 = 'http://127.0.0.1:8000/predict_CXray'
     url_2 = 'https://define-some-container-image-name-p6ejzc3aka-ew.a.run.app/predict_CXray'
     st.write("Classifying...")
@@ -101,4 +117,17 @@ if st.button('Classify disease in Chest X_Ray 🌌'):
         st.error("The results of your Chest X-Ray was a Covid-19 infection 🦠")
     elif prediction == 0:
         st.error("Prediction did not work")
+
+
+    CSS = """
+    h1 {
+    color: red;
+    }
+    body {
+        background-image: url(https://ibb.co/vZ0drCY);
+        background-size: cover;
+    }
+    """
+    if st.checkbox('Inject CSS'):
+        st.write(f'<style>{CSS}</style>', unsafe_allow_html=True)
 
