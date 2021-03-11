@@ -18,7 +18,7 @@ st.header("*Upload the patient's chest X-Ray below*")
 
 # st.set_option('deprecation.showfileUploaderEncoding', False)
 
-uploaded_file = st.file_uploader("Choose a jpeg, jpg, png file")
+uploaded_file = st.file_uploader("Choose a jpeg, jpg, png file", type=[“png”, “jpg”, “jpeg”]))
 
 image = uploaded_file
 if image is not None:
@@ -58,14 +58,14 @@ if st.button('Predict Chest X_Ray 🌌'):
         files=elem
         )
 
-    #prediction = response.json()['prediction'][0]
-    st.write(response.json())
-    #st.write(prediction)
+    prediction = response.json()['prediction'][0]
+    # st.write(response.json())
+    # st.write(prediction)
 
-    # if prediction == 'Normal':
-    #     st.success("The results of your Chest X-Ray was normal 🥳")
-    # elif prediction == 'Diseased':
-    #     st.warning("The results of your Chest X-Ray should disease ☹️")
+    if prediction == 'Normal':
+        st.success("The results of your Chest X-Ray was normal 🥳")
+    elif prediction == 'Diseased':
+        st.error("The results of your Chest X-Ray should disease ☹️")
 
 
 
@@ -88,15 +88,15 @@ if st.button('Classify disease in Chest X_Ray 🌌'):
 
 
     prediction = response.json()['prediction'][0]
-    st.write(response.json())
-    st.write(prediction)
+    #st.write(response.json())
+    #st.write(prediction)
 
     if prediction == 'Normal':
         st.success("The results of your Chest X-Ray was normal 🥳")
     elif prediction == 'Bacterial Pneumonia':
-        st.warning("The results of your Chest X-Ray was a bacterial_pneumonia")
+        st.warning("The results of your Chest X-Ray was a Bacterial_pneumonia")
     elif prediction == 'Viral Pneumonia':
-        st.warning("The results of your Chest X-Ray was a viral_pneumonia 🦠")
+        st.warning("The results of your Chest X-Ray was a Viral_pneumonia 🦠")
     elif prediction == 'Covid-19':
         st.warning("The results of your Chest X-Ray was a Covid-19 infection 🦠")
     elif prediction == 0:
