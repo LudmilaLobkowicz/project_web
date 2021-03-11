@@ -18,7 +18,7 @@ st.header("*Upload the patient's chest X-Ray below*")
 
 # st.set_option('deprecation.showfileUploaderEncoding', False)
 
-uploaded_file = st.file_uploader("Choose a jpeg, jpg, png file", type=[“png”, “jpg”, “jpeg”]))
+uploaded_file = st.file_uploader("Choose a jpeg, jpg, png file", type=[“png”, “jpg”, “jpeg”])
 
 image = uploaded_file
 if image is not None:
