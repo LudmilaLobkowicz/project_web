@@ -65,7 +65,7 @@ if st.button('Predict Chest X_Ray 🌌'):
     if prediction == 'Normal':
         st.success("The results of your Chest X-Ray was normal 🥳")
     elif prediction == 'Diseased':
-        st.error("The results of your Chest X-Ray should disease ☹️")
+        st.error("The results of your Chest X-Ray predicts disease ☹️")
 
 
 
@@ -94,11 +94,11 @@ if st.button('Classify disease in Chest X_Ray 🌌'):
     if prediction == 'Normal':
         st.success("The results of your Chest X-Ray was normal 🥳")
     elif prediction == 'Bacterial Pneumonia':
-        st.error("The results of your Chest X-Ray was a Bacterial_pneumonia")
+        st.error("The results of your Chest X-Ray was a Bacterial Pneumonia")
     elif prediction == 'Viral Pneumonia':
-        st.error("The results of your Chest X-Ray was a Viral_pneumonia 🦠")
+        st.error("The results of your Chest X-Ray was a Viral Pneumonia 🦠")
     elif prediction == 'Covid-19':
         st.error("The results of your Chest X-Ray was a Covid-19 infection 🦠")
     elif prediction == 0:
-        st.error("prediction did not work")
+        st.error("Prediction did not work")
 
