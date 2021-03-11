@@ -9,11 +9,11 @@ import requests
 
 CSS = """
 h1 {
-    color: green;
+    color: DarkTurquoise;
 }
 body {
     background-size: cover;
-    background-color: RGBA(36,160,203,0.32);
+    background-color: LightCyan;
 }
 """
 
