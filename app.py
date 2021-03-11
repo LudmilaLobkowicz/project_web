@@ -46,7 +46,7 @@ st.subheader("Push the Predict button below: 👇")
 
 if st.button('Predict Chest X_Ray 🌌'):
     #url = 'http://127.0.0.1:8000/predict_diseased'
-    url = 'http://localhost:8000/predict_diseased'
+    url = 'https://define-some-container-image-name-p6ejzc3aka-ew.a.run.app/predict_diseased'
     st.write("Predicting...")
     # elem = ('uploaded.jpeg', image, "multipart/form-data")
     # files = {'media': elem}
@@ -74,7 +74,7 @@ st.subheader("Push the Classify button below:👇")
 
 if st.button('Classify disease in Chest X_Ray 🌌'):
     #url_2 = 'http://127.0.0.1:8000/predict_CXray'
-    url_2 = 'http://localhost:8000/predict_CXray'
+    url_2 = 'https://define-some-container-image-name-p6ejzc3aka-ew.a.run.app/predict_CXray'
     st.write("Classifying...")
     # elem = ('uploaded.jpeg', image, "multipart/form-data")
     # files = {'media': elem}
