@@ -119,15 +119,5 @@ if st.button('👇 Push to classify 🌌'):
         st.error("Prediction did not work")
 
 
-    CSS = """
-    h1 {
-    color: red;
-    }
-    body {
-        background-image: url(https://ibb.co/vZ0drCY);
-        background-size: cover;
-    }
-    """
-    if st.checkbox('Inject CSS'):
-        st.write(f'<style>{CSS}</style>', unsafe_allow_html=True)
+
 
